@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #faf8f4;
+  color: #14171a;
+  font-family: "Inter", sans-serif;
+}
+
+.font-display {
+  font-family: "Fraunces", serif;
+}
+
+* {
+  outline-color: #c2632a;
+}
