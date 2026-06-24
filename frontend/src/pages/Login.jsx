@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logo from "../assets/logo.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,6 +13,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
     try {
       await login(email, password);
       navigate("/");
@@ -23,11 +25,28 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-paper px-4">
       <div className="w-full max-w-sm">
-        <h1 className="font-display text-3xl font-semibold text-ink mb-1">Welcome back</h1>
-        <p className="text-ink/60 text-sm mb-8">Sign in to see what's worth doing today.</p>
+
+        {/* Logo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src={logo}
+            alt="AI Task Manager"
+            className="w-24 h-24 rounded-2xl shadow-md"
+          />
+        </div>
+
+        <h1 className="font-display text-3xl font-semibold text-ink mb-1">
+          Welcome back
+        </h1>
+
+        <p className="text-ink/60 text-sm mb-8">
+          Sign in to see what's worth doing today.
+        </p>
 
         {error && (
-          <div className="mb-4 rounded-md bg-clay/10 text-clay text-sm px-3 py-2">{error}</div>
+          <div className="mb-4 rounded-md bg-clay/10 text-clay text-sm px-3 py-2">
+            {error}
+          </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -39,6 +58,7 @@ export default function Login() {
             required
             className="w-full border border-mist rounded-md px-4 py-2.5 bg-white focus:ring-2 focus:ring-sage outline-none"
           />
+
           <input
             type="password"
             placeholder="Password"
@@ -47,6 +67,7 @@ export default function Login() {
             required
             className="w-full border border-mist rounded-md px-4 py-2.5 bg-white focus:ring-2 focus:ring-sage outline-none"
           />
+
           <button
             type="submit"
             className="w-full bg-ink text-paper rounded-md py-2.5 font-medium hover:bg-sage transition-colors"
@@ -57,7 +78,10 @@ export default function Login() {
 
         <p className="text-sm text-ink/60 mt-6">
           No account?{" "}
-          <Link to="/register" className="text-clay font-medium hover:underline">
+          <Link
+            to="/register"
+            className="text-clay font-medium hover:underline"
+          >
             Create one
           </Link>
         </p>
