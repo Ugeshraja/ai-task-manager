@@ -25,7 +25,7 @@ export default function TaskForm({ onTaskCreated }) {
       setAiResult(data);
     } catch (err) {
       console.error(err);
-      alert("AI analysis failed. Check your ANTHROPIC_API_KEY on the server.");
+      alert("AI analysis failed. Check your GEMINI_API_KEY on the server.");
     } finally {
       setAnalyzing(false);
     }
