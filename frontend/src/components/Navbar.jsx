@@ -14,21 +14,17 @@ export default function Navbar() {
   return (
     <header className="flex items-center justify-between px-8 py-5 border-b border-mist">
       
-      {/* Logo + Title */}
       <div className="flex items-center gap-3">
         <img
           src={logo}
           alt="AI Task Manager"
-          className="w-10 h-10 rounded-xl shadow-sm"
+          className="w-10 h-10 rounded-xl"
         />
 
-        <div className="flex flex-col">
-          <span className="font-display text-2xl font-semibold text-ink">
-            Focus
-          </span>
-          <span className="text-xs uppercase tracking-widest text-sage">
+        <div>
+          <h1 className="font-display text-xl font-semibold text-ink">
             AI Task Manager
-          </span>
+          </h1>
         </div>
       </div>
 
